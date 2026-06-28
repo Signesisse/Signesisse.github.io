@@ -1,0 +1,217 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --sky: #d6eaf8;
+  --text-dark: #1a2e1a;
+  --text-mid: #2d4a2d;
+  --accent: #4a7c4a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  color: var(--text-dark);
+  background: var(--sky);
+}
+
+/* ── Breathing background ── */
+@keyframes breathe {
+  from { transform: scale(1.01); }
+  to   { transform: scale(1.05); }
+}
+
+.bg {
+  position: fixed;
+  inset: 0;
+  background-image: url('aandedraet.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  z-index: 0;
+  transform-origin: center center;
+  animation: breathe 5s ease-in-out infinite alternate;
+}
+
+/* ── Header / Nav ── */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 1.5rem 3rem;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dark);
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+nav a:hover {
+  opacity: 1;
+}
+
+/* ── Hero ── */
+#hero {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 3rem;
+}
+
+/* Fade-up on load */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content {
+  max-width: 620px;
+  animation: fadeUp 1.2s ease both;
+}
+
+.hero-content h1 {
+  font-size: clamp(1.4rem, 2.8vw, 2.6rem);
+  font-weight: normal;
+  line-height: 1.15;
+  white-space: nowrap;
+  color: var(--text-dark);
+  margin-bottom: 1.4rem;
+}
+
+.hero-content .intro-lead {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--text-mid);
+  margin-bottom: 0.9rem;
+}
+
+.hero-content ul {
+  list-style: none;
+  margin: 0.2rem 0 1rem 0;
+  padding: 0;
+}
+
+.hero-content ul li {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--text-mid);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.hero-content ul li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.cta {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+
+.cta:hover {
+  opacity: 0.65;
+}
+
+/* ── Main sections ── */
+main {
+  position: relative;
+  z-index: 1;
+}
+
+main section {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 3rem;
+  max-width: 480px;
+  animation: fadeUp 0.8s ease both;
+}
+
+.label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+main p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-mid);
+}
+
+/* ── Footer ── */
+footer {
+  position: relative;
+  z-index: 1;
+  padding: 3rem;
+  font-size: 0.8rem;
+  color: var(--text-mid);
+  opacity: 0.6;
+}
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+  .bg {
+    background-position: 72% bottom;
+  }
+
+  #hero {
+    align-items: flex-start;
+    padding: 5rem 1.5rem 3rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-content h1 {
+    white-space: normal;
+    font-size: 1.6rem;
+  }
+}
