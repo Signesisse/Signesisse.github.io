@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Opslag fra Hjælp dit åndedræt." />
+  <title>Opslag</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <div class="bg"></div>
+
+  <header>
+    <nav>
+      <a class="brand" href="../index.html">Hjælp dit åndedræt</a>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html">Forside</a></li>
+        <li><a href="../aandedraetsforlob.html">Åndedrætsforløb</a></li>
+        <li><a href="../om-mig.html">Om mig</a></li>
+        <li><a href="../kontakt.html">Kontakt</a></li>
+        <li><a href="index.html" aria-current="page">Opslag</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <div class="hero-content">
+      <h1>Opslag</h1>
+
+      <p id="posts-status">Henter opslag …</p>
+      <div id="posts" class="post-list"></div>
+    </div>
+  </section>
+
+  <script src="../script.js" defer></script>
+  <script src="blog.js" defer></script>
+</body>
+</html>

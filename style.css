@@ -199,6 +199,12 @@ nav a:focus-visible {
   margin-bottom: 1.5rem;
 }
 
+.hero-content p a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .hero-content ul {
   list-style: none;
   margin: 0.5rem 0 1.75rem 0;
@@ -291,6 +297,48 @@ nav a:focus-visible {
 
 .cta:hover {
   opacity: 0.65;
+}
+
+/* ── Opslag ── */
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin-top: 0.5rem;
+}
+
+.post-card {
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid rgba(74, 124, 74, 0.25);
+}
+
+.post-card:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.post-card h2 {
+  font-size: 1.15rem;
+  font-weight: normal;
+  margin-bottom: 0.35rem;
+}
+
+.post-card h2 a {
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+.post-card h2 a:hover,
+.post-card h2 a:focus-visible {
+  color: var(--accent);
+}
+
+.post-card .post-date {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
 }
 
 /* ── Main sections ── */

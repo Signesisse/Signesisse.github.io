@@ -73,6 +73,28 @@ English unless asked.
 Comments, commit messages, and filenames stay English. No æ/ø/å in filenames or
 URL paths.
 
+## Opslag (blog)
+
+Self-service posts under `blog/`, shown to visitors as "Opslag", so the site
+owner (not a developer) can post without a CMS or login system beyond her own
+GitHub account (added as a repo collaborator). She duplicates
+`blog/template.html` into a new file and commits directly to `main` via
+github.com's web editor — no build step involved.
+
+`blog/index.html` renders the post list client-side: on load, `blog/blog.js`
+calls the GitHub contents API for the `blog/` folder, then fetches each post's
+raw HTML and parses it with `DOMParser`. It reads the post's `<h1>` (title),
+`.intro-lead` (displayed date), and `.excerpt` (summary shown on the list) —
+**do not rename or repurpose those elements in post files** without updating
+the parser to match. Sorting is by filename, so post filenames must stay
+`YYYY-MM-DD-slug.html` (date-prefixed, lowercase, hyphenated, no æ/ø/å) for
+chronological order to work. `template.html` and `index.html` are excluded
+from the listing by filename.
+
+This depends on the public GitHub API at runtime (no auth, ~60 requests/hour
+per visitor IP) — acceptable for this site's traffic, but worth knowing if the
+list ever silently fails to load.
+
 ## Conventions
 
 Two-space indent. Lowercase-hyphenated class names. Colours and key spacing as
