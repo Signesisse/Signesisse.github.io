@@ -251,6 +251,59 @@ nav a:focus-visible {
   margin-top: 0.3rem;
 }
 
+/* ── Priser ── */
+.price-list {
+  list-style: none;
+  margin: 0.5rem 0 1.75rem;
+  padding: 0;
+}
+
+.price-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(74, 124, 74, 0.25);
+}
+
+.price-item:first-child {
+  padding-top: 0;
+}
+
+.price-item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.price-item-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.price-title {
+  font-size: 1.05rem;
+  color: var(--text-dark);
+}
+
+.price-value {
+  font-size: 1rem;
+  color: var(--accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.price-item p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-mid);
+  margin: 0.3rem 0 0;
+}
+
+.price-note {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--text-mid);
+}
+
 .contact-list {
   margin-top: 0.5rem;
 }
@@ -464,6 +517,11 @@ footer {
   .about-photo {
     width: 84px;
     height: 84px;
+  }
+
+  .price-item-top {
+    flex-direction: column;
+    gap: 0.15rem;
   }
 }
 
