@@ -88,6 +88,36 @@ nav a:focus-visible {
   color: var(--accent);
 }
 
+.nav-item-hold {
+  position: relative;
+}
+
+.nav-hint {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  color: var(--accent);
+  pointer-events: none;
+}
+
+.nav-hint-arrow {
+  display: block;
+}
+
+.nav-hint-text {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -203,6 +233,14 @@ nav a:focus-visible {
   color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.hero-content .schedule-highlight {
+  background: rgba(74, 124, 74, 0.12);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  color: var(--text-dark);
 }
 
 .hero-content ul {
@@ -481,6 +519,13 @@ footer {
     align-items: center;
     min-height: 44px;
     padding: 0.5rem 0.75rem;
+  }
+
+  .nav-hint {
+    position: static;
+    transform: none;
+    align-items: flex-start;
+    margin: 0.15rem 0 0.75rem 0.75rem;
   }
 
   .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
