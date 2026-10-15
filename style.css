@@ -289,6 +289,14 @@ nav a:focus-visible {
   margin-top: 0.3rem;
 }
 
+.hero-content .podcast-embed {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
 /* ── Priser ── */
 .price-list {
   list-style: none;
